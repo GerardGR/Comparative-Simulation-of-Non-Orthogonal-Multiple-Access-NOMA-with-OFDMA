@@ -1,1 +1,3 @@
 # Comparative-Simulation-of-Non-Orthogonal-Multiple-Access-NOMA-with-OFDMA
+
+In this report, an investigation of a new generation radio access technology is conducted. Named NOMA, this concept can be used in the upcoming 5G network. First, the basic NOMA principles including SC and SIC for down-link channels are presented. Then, simulations in both theoretical and practical scenarios are explored, comparing not only the maximum achievable rate, but also the EE at a given SE when using NOMA or another OMA, such as OFDMA used in 4G. The simulations were performed in MATLAB, and the results showed that NOMA achieves a better performance than OMA in the categories compared.
