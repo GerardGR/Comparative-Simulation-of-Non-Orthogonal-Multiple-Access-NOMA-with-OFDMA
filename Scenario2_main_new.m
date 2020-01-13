@@ -2,8 +2,8 @@ clear all;
 close all;
 
 %% Initial Assumptions
-Conf_.CellSize = 0.5;
-Conf_.NumUEs = 10;
+Conf_.CellSize = 10;
+Conf_.NumUEs = 20;
 Conf_.Freq_Carr = 450;
 Conf_.MBS_ant_height = 180;
 Conf_.UE_ant_height = 5;
@@ -13,7 +13,7 @@ Conf_.UE_Pmax_dB =  23;
 Conf_.Antenna_gain = 15; 
 Conf_.No = -174;                 
 Conf_.F_UTnoise = 7;
-Conf_.Flag = 0;           % 0 --> Small Urban Areas
+Conf_.Flag = 3;           % 0 --> Small Urban Areas
                           % 1 --> Metropolitan Urban Areas
                           % 2 --> SubUrban Areas
                           % 3 --> Rural Areas
@@ -235,7 +235,7 @@ plot([0,30],[aveNOMA,aveNOMA],'r','linewidth',1);
 hold on;
 plot([0,30],[aveOMA,aveOMA],'b','linewidth',1);
 legend('Sum Rate of NOMA','Sum Rate of OMA','Average Sum Rate of NOMA','Average Sum Rate of OMA')
-title('Data Rate of NOMA and OMA in Small Urban Areas')
+title('Data Rate of NOMA and OMA in Rural Areas')
 xlabel('Trials');
 ylabel('Sum Data Rate (bit/s)');
 grid
@@ -244,9 +244,9 @@ run EnergyEff.m;
 
 %% NOMA Computation: EE
 SE_noma = aveNOMA/Conf_.BW; % bit/sec/Hz
-EE_noma = aveNOMA/EnergyEff_.CP; % bit/watt.sec
+EE_noma = aveNOMA/EnergyEff_.PowerCons; % bit/watt.sec
 
 %% OMA (OFDMA) Computation: EE
 SE_oma = aveOMA/Conf_.BW; % bit/sec/Hz
-EE_oma = aveOMA/EnergyEff_.CP; % bit/watt.sec
+EE_oma = aveOMA/EnergyEff_.PowerCons; % bit/watt.sec
 
